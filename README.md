@@ -1,2 +1,2 @@
 # HTTP-request-generator
-The name is self explanatory. This is a script which just creates http requests. This was originally developed to create a corpus for my fuzzing of the Apach web server
+The name is self explanatory. This is a script which just creates http requests. This was originally developed to create a corpus for my fuzzing of the Apach web server. Just run python3 generator.py to generate a random request. Now, this script assumes that you have a path to a htdocs folder inside your server, because in order to create semi random, but still mostly valid requests, the script has to know which files are inside your servers content directory. Feel free to add a push request and/or a bug report.
