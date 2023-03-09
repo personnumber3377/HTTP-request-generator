@@ -1,0 +1,7 @@
+POST /s?Ug=o HTTP/1.1
+Host: U
+Accept-Charset: iso-8859-5
+Content-Encoding: deflate
+Accept-Language: tk
+
+FwFXjxjWwjSJihFewHDxeQKbvNVIdAVnnymqOALATwknnpDIyuEDwloRZptbJbscWKFNNFYhGjryiAxcFIVeg

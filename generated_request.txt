@@ -1,0 +1,9 @@
+POST /t HTTP/1.1
+Host: a
+Connection: keep-alive
+A-IM: gdiff
+Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+Trailer: header-names
+Content-Encoding: identity
+
+rrAKnPERuRepqccyeumhRuVjnGRVUNxIXKBdzqKIxNiFjKEoMQamokBeoiKZlnULWeLAzKmxPpNFlQuEruFbAIOupnnlIZQyZoUucHyJtuxWeSxTlofgiHLykMLAXptHXtFHdmTQgEpQOrzfcUaxJlMsXDvgqkaewddyQhLKRzvPBQzdJul
