@@ -1,0 +1,7 @@
+PUT /i HTTP/1.1
+Host: D
+Content-Type: application/json
+Accept: application/json
+Cookie: G=kU
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

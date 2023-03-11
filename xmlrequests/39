@@ -1,0 +1,12 @@
+GET /r HTTP/1.1
+Host: G
+Content-Type: application/xml
+Accept: application/xml
+From: a@b.com
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

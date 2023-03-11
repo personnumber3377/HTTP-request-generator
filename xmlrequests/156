@@ -1,0 +1,12 @@
+GET /x HTTP/1.1
+Host: S
+Content-Type: application/xml
+Accept: application/xml
+Content-Length: 21
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

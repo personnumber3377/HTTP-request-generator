@@ -1,0 +1,7 @@
+GET /qw.txt?Jt=P&T=q HTTP/1.1
+Host: r
+Content-Type: application/json
+Accept: application/json
+Upgrade: foo/2
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

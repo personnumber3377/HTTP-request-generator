@@ -1,0 +1,6 @@
+PUT /km?q=fW&kc=Vy HTTP/1.1
+Host: V
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

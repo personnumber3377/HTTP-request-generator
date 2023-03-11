@@ -1,0 +1,7 @@
+POST /v?Uk=U&T=mJ HTTP/1.1
+Host: S
+Content-Type: application/json
+Accept: application/json
+Accept: application/pkix-pkipath, model/mesh, application/x-rar-compressed, application/vnd.chipnuts.karaoke-mmd
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

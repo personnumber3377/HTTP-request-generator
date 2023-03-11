@@ -1,0 +1,7 @@
+POST /t HTTP/1.1
+Host: c
+Content-Type: application/json
+Accept: application/json
+Content-Type: application/x-msaccess
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

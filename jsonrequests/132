@@ -1,0 +1,7 @@
+GET /qj?FS=bH&Z=Fr HTTP/1.1
+Host: v
+Content-Type: application/json
+Accept: application/json
+Trailer: header-names
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

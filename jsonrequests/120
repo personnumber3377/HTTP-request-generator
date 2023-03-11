@@ -1,0 +1,7 @@
+PUT /u HTTP/1.1
+Host: e
+Content-Type: application/json
+Accept: application/json
+TE: trailers, deflate
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

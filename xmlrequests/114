@@ -1,0 +1,12 @@
+PUT /h?QX=L HTTP/1.1
+Host: D
+Content-Type: application/xml
+Accept: application/xml
+A-IM: feed, vcdiff
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

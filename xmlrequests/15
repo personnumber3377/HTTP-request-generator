@@ -1,0 +1,12 @@
+GET /lh HTTP/1.1
+Host: A
+Content-Type: application/xml
+Accept: application/xml
+Range: bytes=60:77, bytes=80:80
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

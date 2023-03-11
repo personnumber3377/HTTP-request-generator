@@ -1,0 +1,7 @@
+PUT /km HTTP/1.1
+Host: W
+Content-Type: application/json
+Accept: application/json
+Accept: application/vnd.umajin, application/scvp-vp-request, application/ogg, text/vnd.in3d.spot
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

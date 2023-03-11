@@ -1,0 +1,11 @@
+PUT /b?j=g&Q=u HTTP/1.1
+Host: J
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

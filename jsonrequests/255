@@ -1,0 +1,7 @@
+POST /n.pdf HTTP/1.1
+Host: z
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

@@ -1,0 +1,6 @@
+POST /bc?jH=gS&Q=Je HTTP/1.1
+Host: P
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

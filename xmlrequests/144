@@ -1,0 +1,12 @@
+PUT /ut?qz=CD&N=H HTTP/1.1
+Host: g
+Content-Type: application/xml
+Accept: application/xml
+Host: D
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

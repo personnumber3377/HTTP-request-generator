@@ -1,0 +1,7 @@
+GET /index.html?V=yA HTTP/1.1
+Host: r
+Content-Type: application/json
+Accept: application/json
+Accept-Datetime: Wed, 29 Apr 1992 17:15:39 GMT
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

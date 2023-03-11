@@ -1,0 +1,11 @@
+GET /sw.txt?OT=h&g=O HTTP/1.1
+Host: N
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

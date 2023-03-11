@@ -1,0 +1,7 @@
+GET /v?RB=w&G=L HTTP/1.1
+Host: no-cache
+Content-Type: application/json
+Accept: application/json
+Proxy-Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

@@ -1,0 +1,6 @@
+POST /ut HTTP/1.1
+Host: F
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

@@ -1,0 +1,7 @@
+GET /ub.pdf?Y=SI HTTP/1.1
+Host: f
+Content-Type: application/json
+Accept: application/json
+Date: Sat, 11 Mar 2023 23:45:57 GMT
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

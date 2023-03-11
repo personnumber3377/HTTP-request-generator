@@ -1,0 +1,7 @@
+GET /l?o=ub&l=ta HTTP/1.1
+Host: n
+Content-Type: application/json
+Accept: application/json
+Content-Type: application/vnd.dart
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

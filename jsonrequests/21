@@ -1,0 +1,7 @@
+GET /r?n=N HTTP/1.1
+Host: D
+Content-Type: application/json
+Accept: application/json
+Access-Control-Request-Headers: A-IM, Accept, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Access-Control-Request-Method, Authorization, Cache-Control, Connection, Content-Encoding, Content-Length, Content-MD5, Content-Type, Cookie, Date, Expect, Forwarded, From, Proxy-Authorization, Range, Referer, TE, Trailer, Transfer-Encoding, Upgrade, User-Agent, Via, Warning, Host
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

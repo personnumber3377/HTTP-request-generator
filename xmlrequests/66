@@ -1,0 +1,12 @@
+PUT /na.txt HTTP/1.1
+Host: A
+Content-Type: application/xml
+Accept: application/xml
+Expect: 100-continue
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

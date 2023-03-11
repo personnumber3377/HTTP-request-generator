@@ -1,0 +1,7 @@
+PUT /sl?Xd=bj HTTP/1.1
+Host: l
+Content-Type: application/json
+Accept: application/json
+From: a@b.com
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

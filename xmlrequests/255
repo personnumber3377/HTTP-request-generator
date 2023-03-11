@@ -1,0 +1,12 @@
+POST /r.bin?Ph=Nq HTTP/1.1
+Host: i
+Content-Type: application/xml
+Accept: application/xml
+Accept: utf-8
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

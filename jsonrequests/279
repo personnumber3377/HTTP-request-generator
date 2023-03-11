@@ -1,0 +1,7 @@
+POST /ax?n=ti HTTP/1.1
+Host: B
+Content-Type: application/json
+Accept: application/json
+Accept: application/pls+xml
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

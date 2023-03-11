@@ -1,0 +1,12 @@
+POST /j.png?M=iF&t=l HTTP/1.1
+Host: g
+Content-Type: application/xml
+Accept: application/xml
+Trailer: header-names
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

@@ -1,0 +1,11 @@
+GET /wq HTTP/1.1
+Host: o
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

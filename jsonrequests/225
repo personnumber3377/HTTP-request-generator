@@ -1,0 +1,7 @@
+POST /s?GO=S HTTP/1.1
+Host: M
+Content-Type: application/json
+Accept: application/json
+Referer: http://127.0.0.1:8080/a?q=124214221214
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

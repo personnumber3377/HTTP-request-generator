@@ -1,0 +1,11 @@
+GET /je?XI=B&z=lL HTTP/1.1
+Host: n
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

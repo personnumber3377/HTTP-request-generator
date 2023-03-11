@@ -1,0 +1,12 @@
+POST /g?y=YB&XA=m HTTP/1.1
+Host: m
+Content-Type: application/xml
+Accept: application/xml
+Cache-Control: Upgrade 
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

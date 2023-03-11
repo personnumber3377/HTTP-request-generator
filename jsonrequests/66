@@ -1,0 +1,6 @@
+GET /kn?eL=x&T=Q HTTP/1.1
+Host: c
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

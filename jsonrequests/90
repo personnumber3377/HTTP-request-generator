@@ -1,0 +1,6 @@
+POST /vi.html HTTP/1.1
+Host: d
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

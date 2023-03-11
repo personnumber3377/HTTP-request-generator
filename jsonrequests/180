@@ -1,0 +1,7 @@
+GET /kn?w=LC&ZF=R HTTP/1.1
+Host: b
+Content-Type: application/json
+Accept: application/json
+Cache-Control: no-cache
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

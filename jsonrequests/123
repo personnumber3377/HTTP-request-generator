@@ -1,0 +1,6 @@
+POST /j?n=dZ HTTP/1.1
+Host: t
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

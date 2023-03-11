@@ -1,0 +1,12 @@
+POST /rq?o=Q HTTP/1.1
+Host: l
+Content-Type: application/xml
+Accept: application/xml
+Proxy-Authorization: token64
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

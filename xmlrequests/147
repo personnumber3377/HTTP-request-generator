@@ -1,0 +1,12 @@
+GET /jm?EO=TF&ax=u HTTP/1.1
+Host: no-cache
+Content-Type: application/xml
+Accept: application/xml
+Accept: application/vnd.musician
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

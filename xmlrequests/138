@@ -1,0 +1,11 @@
+POST /ub.pdf?tA=Zu&ck=qb HTTP/1.1
+Host: X
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

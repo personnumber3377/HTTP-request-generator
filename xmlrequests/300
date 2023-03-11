@@ -1,0 +1,12 @@
+PUT /qw.txt?kT=S HTTP/1.1
+Host: o
+Content-Type: application/xml
+Accept: application/xml
+Accept-Encoding: deflate
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

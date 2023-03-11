@@ -1,0 +1,12 @@
+GET /em.png?u=US HTTP/1.1
+Host: H
+Content-Type: application/xml
+Accept: application/xml
+Date: Sat, 11 Mar 2023 23:45:32 GMT
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

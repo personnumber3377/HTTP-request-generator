@@ -1,0 +1,12 @@
+POST /cp?j=kD&n=Zy HTTP/1.1
+Host: B
+Content-Type: application/xml
+Accept: application/xml
+From: a@b.com
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

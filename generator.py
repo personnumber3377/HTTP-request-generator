@@ -317,7 +317,10 @@ function_pointers = {http_headers[i]:header_handlers[i] for i in range(len(http_
 #header_handlers = [aim, accept]
 
 
-def fill_in_header(modify_chance, header, body=None):
+def fill_in_header(modify_chance, header, body=None,specific_val=None):
+
+	if specific_val != None:
+		return str(header)+str(": ")+str(specific_val)
 
 	if random.random()<modify_chance:
 		# modify header
@@ -337,9 +340,16 @@ def generate_headers(num_headers, modify_chance, banned_headers=[], body=None, m
 
 	for mandatory_header in mandatory_headers:
 
+		# this is to check if we want a specific value or if we can choose a value:
+		if isinstance(mandatory_header, str):
+			output_list.append(fill_in_header(modify_chance, mandatory_header,body=body))
+		else:
+			# assume that we want a specific value:
+			value = mandatory_header[1]
+			output = fill_in_header(modify_chance, mandatory_header[0], body=body ,specific_val=value)
+			output_list.append(output)
 
-		output_list.append(fill_in_header(modify_chance, mandatory_header,body=body))
-	
+
 
 
 	for _ in range(num_headers-len(mandatory_headers)):

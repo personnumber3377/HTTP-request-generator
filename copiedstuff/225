@@ -1,0 +1,12 @@
+GET /l?S=cm HTTP/1.1
+Host: n
+Content-Type: application/xml
+Accept: application/xml
+Content-MD5: 00SleZpLNoBKuARyoTzpcw==
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

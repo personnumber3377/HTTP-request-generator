@@ -1,0 +1,11 @@
+POST /ns?Lp=b HTTP/1.1
+Host: F
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

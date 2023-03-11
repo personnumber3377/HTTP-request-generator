@@ -1,0 +1,12 @@
+PUT /gg?g=N&vy=l HTTP/1.1
+Host: r
+Content-Type: application/xml
+Accept: application/xml
+Access-Control-Request-Method: GET
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

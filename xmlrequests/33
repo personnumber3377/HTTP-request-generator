@@ -1,0 +1,11 @@
+GET /m?TG=KG HTTP/1.1
+Host: i
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

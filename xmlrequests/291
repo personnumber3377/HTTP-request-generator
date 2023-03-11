@@ -1,0 +1,12 @@
+POST /b.pdf?eC=ZU&p=T HTTP/1.1
+Host: Q
+Content-Type: application/xml
+Accept: application/xml
+Content-Encoding: compress
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

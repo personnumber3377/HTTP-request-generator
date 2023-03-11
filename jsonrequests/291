@@ -1,0 +1,7 @@
+POST /wq?F=IZ HTTP/1.1
+Host: z
+Content-Type: application/json
+Accept: application/json
+Accept-Charset: iso-8859-5
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

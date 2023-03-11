@@ -1,0 +1,12 @@
+POST /c?x=ii HTTP/1.1
+Host: g
+Content-Type: application/xml
+Accept: application/xml
+Accept-Encoding: br
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

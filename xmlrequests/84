@@ -1,0 +1,11 @@
+PUT /oh?sD=NI HTTP/1.1
+Host: t
+Content-Type: application/xml
+Accept: application/xml
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>

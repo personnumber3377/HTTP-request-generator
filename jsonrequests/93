@@ -1,0 +1,6 @@
+PUT /ix?FZ=Vz&q=b HTTP/1.1
+Host: Y
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

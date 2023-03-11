@@ -1,0 +1,6 @@
+POST /e.pdf?EO=Y&a=MS HTTP/1.1
+Host: e
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

@@ -1,0 +1,6 @@
+GET /of HTTP/1.1
+Host: no-cache
+Content-Type: application/json
+Accept: application/json
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

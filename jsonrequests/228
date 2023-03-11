@@ -1,0 +1,7 @@
+GET /of HTTP/1.1
+Host: i
+Content-Type: application/json
+Accept: application/json
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+
+{"foo": 42, "bar": {"baz": "Hello", "poo": 124.2}}

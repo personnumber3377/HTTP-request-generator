@@ -1,0 +1,12 @@
+POST /vs.html HTTP/1.1
+Host: r
+Content-Type: application/xml
+Accept: application/xml
+Cache-Control: no-cache
+
+<root>
+    <person>
+        <name>anurag</name>
+        <address>Pune, india</address>
+     </person>
+</root>
