@@ -12,7 +12,7 @@ from languages import *
 from hashlib import md5
 import base64
 import os
-import json
+
 
 
 # ['A-IM', 'Accept', 'Accept-Charset', 'Accept-Datetime', 'Accept-Encoding', 'Accept-Language', 'Access-Control-Request-Headers', 'Access-Control-Request-Method', 'Authorization', 'Cache-Control', 'Connection', 'Content-Encoding', 'Content-Length', 'Content-MD5', 'Content-Type', 'Cookie', 'Date', 'Expect', 'Forwarded', 'From', 'HTTP2-Settings', 'Host', 'If-Match', 'If-Modified-Since', 'If-None-Match', 'If-Range', 'If-Unmodified-Since', 'Max-Forwards', 'Origin', 'Pragma', 'Prefer', 'Proxy-Authorization', 'Range', 'Referer', 'TE', 'Trailer', 'Transfer-Encoding', 'Upgrade', 'User-Agent', 'Via', 'Warning']
@@ -159,11 +159,7 @@ def content_md5(body=None):
 		result = base64.b64encode((md5(''.encode("utf-8"))).digest()).decode("ascii")
 		return result
 
-def generate_json():
 
-	my_dict = {'foo': 42, 'bar': {'baz': "Hello", 'poo': 124.2}}
-	my_json = json.dumps(my_dict)
-	return my_json
 
 def content_type(body=None):
 	things = random.choice(mime_types)
@@ -385,19 +381,8 @@ def generate_start_line(files):
 
 	return method+" "+str(resource)+str(parameters)+" "+str(http_string)+"\x0d\x0a"
 
-def generate_body(json=False, xml=False):
-	if xml:
-		xmlTemplate = """<root>
-    <person>
-        <name>%(name)s</name>
-        <address>%(address)s</address>
-     </person>
-</root>"""
+def generate_body():
 
-		data = {'name':'anurag', 'address':'Pune, india'}
-		return (xmlTemplate%data)
-	elif json:
-		return generate_json()
 	return rand_str(random.randrange(0,200))
 
 
@@ -430,16 +415,7 @@ def generate_request(modify_chance, filething, banned_headers=[], mandatory_head
 	body = generate_body()
 	request_headers = generate_headers(num_headers_thning,modify_chance,banned_headers=banned_headers, body=body, mandatory_headers=mandatory_headers)
 
-	print("request_headers: "+str(request_headers))
-
-	# regenerate body if xml or json. This of course messes up the MD5 header for example, but it is good enough for our purposes.
 	
-
-	if "xml" in request_headers:
-		body = generate_body(xml=True)
-	if "json" in request_headers:
-		body = generate_body(json=True)
-
 
 	return start_string+request_headers+"\x0d\x0a\x0d\x0a"+str(body)
 
@@ -480,3 +456,6 @@ if __name__=="__main__":
 		fh.close()
 
 		cur_filename = str(int(cur_filename)+3)
+
+
+
