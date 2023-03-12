@@ -1,0 +1,5 @@
+Get /x?dc=m HTTP/1.1
+Host: k
+Cookie: session=sessioncookiething;
+
+SXHmfZIjPLnfYsew

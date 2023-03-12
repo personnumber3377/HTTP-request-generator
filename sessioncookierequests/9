@@ -1,0 +1,7 @@
+Get /x?gj=w&Ky=wC HTTP/1.1
+Host: q
+Cookie: session=sessioncookiething;
+Access-Control-Request-Headers: A-IM, Accept, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Access-Control-Request-Method, Authorization, Cache-Control, Connection, Content-Encoding, Content-Length, Content-MD5, Content-Type, Cookie, Date, Expect, Forwarded, From, HTTP2-Settings, Host, If-Match, If-Modified-Since, If-None-Match, If-Range, If-Unmodified-Since, Max-Forwards, Origin, Pragma, Prefer, Proxy-Authorization, Range, Referer, TE, Trailer, Transfer-Encoding, Upgrade, User-Agent, Via, Warning
+Range: bytes=13:18, bytes=18:18
+
+SPFrLLNeXOlWpjWlQDt

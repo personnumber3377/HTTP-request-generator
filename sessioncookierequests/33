@@ -1,0 +1,7 @@
+Get /x HTTP/1.1
+Host: y
+Cookie: session=sessioncookiething;
+Content-Type: application/vnd.3m.post-it-notes
+Date: Mon, 13 Mar 2023 00:25:52 GMT
+
+POCDSVmkkhbpPObtnbAIXKTKbYBzWBxdZnaVDZYdyVaBMoWiXMjdjHXEwaT

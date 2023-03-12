@@ -1,0 +1,6 @@
+Get /x?mO=EA&HI=Sy HTTP/1.1
+Host: r
+Cookie: session=sessioncookiething;
+Proxy-Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+
+BZXDzDXAlxmxdBEnoSFxSaegBIXpjEbpCYigebGmdtMrNNseBbwyHQVyWuyjASlFVsSJ

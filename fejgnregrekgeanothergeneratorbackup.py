@@ -430,17 +430,11 @@ def generate_params():
 
 
 
-def generate_start_line(files, only_certain_methods=False, only_certain_files=False):
-	if only_certain_methods == False:
-		method = random.choice(methods)
-	else:
-		method = random.choice(only_certain_methods) # only_certain_methods is assumed to be a list
+def generate_start_line(files):
 
-	if not only_certain_files:
-		resource = "/"+random.choice(files)
-	else:
-		resource = "/"+random.choice(only_certain_files)
+	method = random.choice(methods)
 
+	resource = "/"+random.choice(files)
 	#print(resource)
 
 	parameters = generate_params()		
@@ -467,7 +461,7 @@ def generate_body(json=False, xml=False):
 	return rand_str(random.randrange(0,200))
 
 
-def generate_request(modify_chance, filething, banned_headers=[], mandatory_headers=[], only_certain_headers=False, only_certain_methods=False, only_certain_files=False):
+def generate_request(modify_chance, filething, banned_headers=[], mandatory_headers=[], only_certain_headers=False):
 
 
 	'''
@@ -481,7 +475,7 @@ def generate_request(modify_chance, filething, banned_headers=[], mandatory_head
 
 	put_banned_headers = ["Transfer-Encoding"]
 
-	start_string = generate_start_line(filething, only_certain_methods=only_certain_methods, only_certain_files=only_certain_files)
+	start_string = generate_start_line(filething)
 	
 	selected_method = start_string.split(" ")[0]
 
@@ -549,7 +543,7 @@ if __name__=="__main__":
 
 	banlist = ["Warning", "Via", "Forwarded"]
 
-	mandatory_headers = ["Host", ["Cookie", "session=sessioncookiething;"]]
+	mandatory_headers = ["Host"]
 
 	'''
 	HTTP2-Settings: token64
@@ -571,20 +565,18 @@ if __name__=="__main__":
 
 	cur_filename = str(len(existing_corpus_files)+3)
 
-	use_only_these_headers = False
-	#use_only_these_headers = ["Cookie", "Accept"]
-	allowed_methods = False
-	certain_files_only = ["x"]
-	allowed_methods = ["Get"]
+	#use_only_these_headers = False
+	use_only_these_headers = ["HTTP2-Settings", "If-Match", "If-Modified-Since", "If-None-Match", "If-Range", "If-Unmodified-Since", "Max-Forwards", "Origin", "Pragma"]
 
 
-	how_many_requests = 10
+
+	how_many_requests = 20
 
 	for _ in range(how_many_requests):
 
 
 
-		output = generate_request(0.9, files, banned_headers=banlist, mandatory_headers=mandatory_headers, only_certain_headers=use_only_these_headers, only_certain_methods=allowed_methods, only_certain_files=certain_files_only)
+		output = generate_request(0.9, files, banned_headers=banlist, mandatory_headers=mandatory_headers, only_certain_headers=use_only_these_headers)
 		if output_directory != False:
 
 			fh = open(output_directory+str(cur_filename), "w+")
@@ -593,5 +585,3 @@ if __name__=="__main__":
 			fh.close()
 
 			cur_filename = str(int(cur_filename)+3)
-		else:
-			print(output)
