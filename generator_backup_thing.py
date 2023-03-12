@@ -13,7 +13,7 @@ from hashlib import md5
 import base64
 import os
 import json
-import sys
+
 
 # ['A-IM', 'Accept', 'Accept-Charset', 'Accept-Datetime', 'Accept-Encoding', 'Accept-Language', 'Access-Control-Request-Headers', 'Access-Control-Request-Method', 'Authorization', 'Cache-Control', 'Connection', 'Content-Encoding', 'Content-Length', 'Content-MD5', 'Content-Type', 'Cookie', 'Date', 'Expect', 'Forwarded', 'From', 'HTTP2-Settings', 'Host', 'If-Match', 'If-Modified-Since', 'If-None-Match', 'If-Range', 'If-Unmodified-Since', 'Max-Forwards', 'Origin', 'Pragma', 'Prefer', 'Proxy-Authorization', 'Range', 'Referer', 'TE', 'Trailer', 'Transfer-Encoding', 'Upgrade', 'User-Agent', 'Via', 'Warning']
 
@@ -342,14 +342,6 @@ header_handlers = [aim, accept, accept_charset, accept_datetime, accept_encoding
 # ['HTTP2-Settings', 'Host', 'If-Match', 'If-Modified-Since', 'If-None-Match', 'If-Range', 'If-Unmodified-Since', 'Max-Forwards', 'Origin', 'Pragma', 'Prefer']
 # just before the proxy_authorization thing
 
-
-#print("===========\n\n\n\n")
-
-#print(http_headers)
-#print(header_handlers)
-#print("len(http_headers) == "+str(len(http_headers)))
-#print("len(header_handlers) == "+str(len(header_handlers)))
-#print("===========\n\n\n\n")
 function_pointers = {http_headers[i]:header_handlers[i] for i in range(len(http_headers))}
 
 # ['A-IM', 'Accept', 'Accept-Charset', 'Accept-Datetime', 'Accept-Encoding', 'Accept-Language', 'Access-Control-Request-Headers', 'Access-Control-Request-Method', 'Authorization', 'Cache-Control', 'Connection', 'Content-Encoding', 'Content-Length', 'Content-MD5', 'Content-Type', 'Cookie', 'Date', 'Expect', 'Forwarded', 'From', 'Pragma', 'Prefer', 'Proxy-Authorization', 'Range', 'Referer', 'TE', 'Trailer', 'Transfer-Encoding', 'Upgrade', 'User-Agent', 'Via', 'Warning']
@@ -377,7 +369,7 @@ def fill_in_header(modify_chance, header, body=None,specific_val=None):
 	return
 
 
-def generate_headers(num_headers, modify_chance, banned_headers=[], body=None, mandatory_headers=[], only_certain_headers=False):
+def generate_headers(num_headers, modify_chance, banned_headers=[], body=None, mandatory_headers=[]):
 	output_list = []
 
 	for mandatory_header in mandatory_headers:
@@ -395,17 +387,9 @@ def generate_headers(num_headers, modify_chance, banned_headers=[], body=None, m
 
 
 	for _ in range(num_headers-len(mandatory_headers)):
-		if only_certain_headers == False:
-
+		selected_header = random.choice(http_headers)
+		while selected_header in banned_headers:
 			selected_header = random.choice(http_headers)
-			while selected_header in banned_headers:
-				selected_header = random.choice(http_headers)
-
-		else:
-			selected_header = random.choice(only_certain_headers)
-			while selected_header in banned_headers:
-				selected_header = random.choice(only_certain_headers)
-		
 
 		output_list.append(fill_in_header(modify_chance, selected_header,body=body))
 
@@ -461,7 +445,7 @@ def generate_body(json=False, xml=False):
 	return rand_str(random.randrange(0,200))
 
 
-def generate_request(modify_chance, filething, banned_headers=[], mandatory_headers=[], only_certain_headers=False):
+def generate_request(modify_chance, filething, banned_headers=[], mandatory_headers=[]):
 
 
 	'''
@@ -488,9 +472,9 @@ def generate_request(modify_chance, filething, banned_headers=[], mandatory_head
 
 	num_headers_thning = random.randrange(1,5)
 	body = generate_body()
-	request_headers = generate_headers(num_headers_thning,modify_chance,banned_headers=banned_headers, body=body, mandatory_headers=mandatory_headers, only_certain_headers=only_certain_headers)
+	request_headers = generate_headers(num_headers_thning,modify_chance,banned_headers=banned_headers, body=body, mandatory_headers=mandatory_headers)
 
-	#print("request_headers: "+str(request_headers))
+	print("request_headers: "+str(request_headers))
 
 	# regenerate body if xml or json. This of course messes up the MD5 header for example, but it is good enough for our purposes.
 	
@@ -507,55 +491,15 @@ def generate_request(modify_chance, filething, banned_headers=[], mandatory_head
 
 if __name__=="__main__":
 	
-	#files = os.listdir("/home/cyberhacker/httpd-lto/install/htdocs")
+	files = os.listdir("/home/cyberhacker/httpd-lto/install/htdocs")
 	#print(random_dateformat())
 	#print("Headers: "+str(http_headers))
-	
-
-	if len(sys.argv) != 2 and len(sys.argv) != 3:
-		print("Usage: "+str(sys.argv[0])+" HTDOCSFOLDER [output_folder]")
-		print("If output_folder is not specified, then tool dumps generated requests to stdout.")
-		exit(1)
-	
-
-
-
-	output_directory = False
-	input_directory = False
-
-
-	if len(sys.argv) == 3:
-		output_directory = sys.argv[2]
-	input_directory = sys.argv[1]
-
-
-	if output_directory:
-		if output_directory[-1] != "/":
-			output_directory+= "/"
-
-	input_directory = sys.argv[1]
-
-	if input_directory[-1] != "/":
-		input_directory+= "/"
-
-	files = os.listdir(input_directory)
-
 
 	banlist = ["Warning", "Via", "Forwarded"]
 
 	mandatory_headers = ["Host"]
 
-	'''
-	HTTP2-Settings: token64
-	If-Match: "737060cd8c284d8af7ad3082f209582d"
-	If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT
-	If-None-Match: "737060cd8c284d8af7ad3082f209582d"
-	If-Range: "737060cd8c284d8af7ad3082f209582d"
-	If-Unmodified-Since: Sat, 29 Oct 1994 19:43:31 GMT
-	Max-Forwards: 10
-	Origin: http://www.example-social-network.com
-	Pragma: no-cache
-	'''
+
 
 
 	#print(generate_headers(3,0.9,banned_headers=banlist))
@@ -565,23 +509,18 @@ if __name__=="__main__":
 
 	cur_filename = str(len(existing_corpus_files)+3)
 
-	#use_only_these_headers = False
-	use_only_these_headers = ["HTTP2-Settings", "If-Match", "If-Modified-Since", "If-None-Match", "If-Range", "If-Unmodified-Since", "Max-Forwards", "Origin", "Pragma"]
 
 
-
-	how_many_requests = 20
+	how_many_requests = 1000
 
 	for _ in range(how_many_requests):
 
 
 
-		output = generate_request(0.9, files, banned_headers=banlist, mandatory_headers=mandatory_headers, only_certain_headers=use_only_these_headers)
-		if output_directory != False:
+		output = generate_request(0.9, files, banned_headers=banlist, mandatory_headers=mandatory_headers)
+		fh = open("/home/cyberhacker/Asioita/Hakkerointi/httpcorpus/corpus_output/HTTPcorpus/"+str(cur_filename), "w+")
 
-			fh = open(output_directory+str(cur_filename), "w+")
+		fh.write(output)
+		fh.close()
 
-			fh.write(output)
-			fh.close()
-
-			cur_filename = str(int(cur_filename)+3)
+		cur_filename = str(int(cur_filename)+3)

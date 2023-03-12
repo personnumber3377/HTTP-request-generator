@@ -76,7 +76,7 @@ Forwarded: for=192.0.2.60;proto=http;by=203.0.113.43 Forwarded: for=192.0.2.43, 
 From: user@example.com
 Host: en.wikipedia.org:8080
 
-
+Host: en.wikipedia.org
 HTTP2-Settings: token64
 If-Match: "737060cd8c284d8af7ad3082f209582d"
 If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT
@@ -117,16 +117,17 @@ headers = [x for x in headers if x != ""]
 #print("set(headers) == "+str(set(headers)))
 headers = list(set(headers))
 headers = sorted(headers)
+
 #print(headers.index("Prefer"))
-#thingoof = headers[20:30+1]
-thingoof = headers
-#print("thingoof : "+str(thingoof))
-#headers = list(set(headers) - set(thingoof))
-headers = sorted(headers)
+thingoof = headers[20:30+1]
+headers = thingoof
 print("headers: "+str(headers))
+#print("thingoof : "+str(thingoof))
+headers = list(set(headers) - set(thingoof))
+headers = sorted(headers)
 
 http_headers = headers
-#http_headers.append("Host")
+http_headers.append("Host")
 #print("http_headers == " + str(http_headers))
 
 default_values = default_values_string.split("\n")
@@ -135,8 +136,8 @@ default_values = sorted(default_values)
 #print("just sorted default_values: "+str(default_values))
 default_values = [val[val.index(":")+2:] for val in default_values]
 default_values = list(default_values)
-#default_values.append("127.0.0.1:8080")
-print("default_values: "+str(default_values))
+default_values.append("127.0.0.1:8080")
+
 
 
 

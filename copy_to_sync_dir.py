@@ -21,7 +21,7 @@ if __name__=="__main__":
 	if sync_dir[-1] != "/":
 		sync_dir += "/"
 
-	id_count = 0
+	id_count = 20
 
 	for file in files:
 
